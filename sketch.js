@@ -13,7 +13,9 @@ var bg = "sprites/bg1.png";
 var score = 0;
 
 function preload() {
+    backgroundImg = loadImage("sprites/bg.png")
     getBackgroundImg();
+
 }
 
 function setup(){
@@ -95,6 +97,8 @@ function mouseReleased(){
 function keyPressed(){
     if(keyCode === 32){
        slingshot.attach(bird.body);
+       bird.trajectory = [];
+       Matter.Body.setPosition(bird.body,{x:200,y:50});
     }
 }
 
